@@ -1,21 +1,25 @@
 
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld></HelloWorld>
-    <doorman></doorman>
+    <div v-if="loggedin">    
+      <doorman></doorman>
+    </div>
+    <div v-else>
+      <dashboard></dashboard>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import doorman from './components/doorman.vue'
+import dashboard from './components/dashboard.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    doorman
-  }
+    doorman,
+    dashboard
+  },
+  loggedin: false
 }
 </script>
 

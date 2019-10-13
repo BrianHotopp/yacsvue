@@ -1,11 +1,14 @@
 
 <template>
   <div id="app">
-    <div v-if="loggedin">    
-      <doorman></doorman>
+  
+
+    <div v-if="loggedin"> 
+      <dashboard></dashboard>   
+      
     </div>
     <div v-else>
-      <dashboard></dashboard>
+      <doorman></doorman>
     </div>
   </div>
 </template>

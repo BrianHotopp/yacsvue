@@ -8,11 +8,12 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import App from './App.vue'
 
 import register from './components/register.vue'
-
+import login from './components/login.vue'
 
 Vue.config.productionTip = false
 const routes = [
-  { path: '/testroute/register', component: register }
+  { path: '/register', component: register },
+  { path: '/login', component: login }
 ]
 
 const router = new VueRouter({

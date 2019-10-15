@@ -1,15 +1,15 @@
+<style>
 
+</style>
 <template>
   <div id="app">
-  
-
+    <!-- Header -->
+    <!-- Sidebar -->
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import doorman from './components/doorman.vue'
-import dashboard from './components/dashboard.vue'
 export default {
   name: 'app',
   

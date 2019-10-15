@@ -5,6 +5,6 @@ this should appear
 </template>
 <script>
 export default {
-    name:"dashboard.vue"
+    name:"dashboard"
 }
 </script>

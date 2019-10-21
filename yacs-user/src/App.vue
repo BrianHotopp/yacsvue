@@ -3,14 +3,12 @@
 </style>
 <template>
   <div id="app">
-    <!-- Header -->
-    <div class="header-container">
-      <nav class="navbar navbar-custom navbar-expand-sm flex-wrap2 flex-md-nowrap p-0">
-        <div class="container">
+    <b-navbar class="p-0 navbar-custom">
+      <div class="container">
           <a class="navbar-brand col-auto mr-0" href="https://yacs.cs.rpi.edu/"><img class="theme-logo" src="./assets/yacs-symbol-lockup-white.png"></a>
         </div>
-      </nav>
-    </div>
+    </b-navbar>
+    
     <!-- Sidebar -->
     <div class="container ml-0">
       <div class = "row">

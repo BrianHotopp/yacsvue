@@ -4,6 +4,14 @@
 <template>
   <div id="app">
     <!-- Header -->
+    <div class="header-container">
+      <nav class="navbar navbar-custom navbar-expand-sm flex-wrap2 flex-md-nowrap p-0">
+        <div class="container">
+
+        </div>
+      
+      </nav>
+    </div>
     <!-- Sidebar -->
     <router-view></router-view>
   </div>
@@ -23,6 +31,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
 }
 </style>

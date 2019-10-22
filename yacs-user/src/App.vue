@@ -9,17 +9,17 @@
     </div>
     </b-navbar>
     <!-- rewrite sidebar -->
-    <b-container>
-      <b-row>
-        <b-col md="2" id="sidebar">
+    <b-container fluid class="h-100">
+      <b-row class="h-100">
+        <b-col md="1" id="sidebar">
             <b-nav vertical>
-            <b-nav-item class="navitem"><router-link class="white-link" to="#">Login</router-link></b-nav-item>
+            <b-nav-item class="navitem"><router-link class="white-link" to="/login">Login</router-link></b-nav-item>
             <b-nav-item class="navitem"><router-link class="white-link" to="#">Browsing History</router-link></b-nav-item>
             <b-nav-item class="navitem"><router-link class="white-link" to="#">Notifications</router-link></b-nav-item>
             <b-nav-item class="navitem"><router-link class="white-link" to="#">Watch List</router-link></b-nav-item>
             </b-nav>
         </b-col>
-        <b-col md="8" class="mt-5">
+        <b-col md="10" class="d-flex justify-content-center">
           <router-view></router-view>
         </b-col>
       </b-row>
@@ -43,14 +43,23 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  
+}
+html, body, #app, section.section {
+  height: 100%;
   min-height: 100%;
 }
-
 .white-link{
     color:#ffffff
 }
+.white-link:hover{
+  color: white;
+}
 .black-link{
     color:black;
+}
+.black-link:hover{
+  color: black;
 }
 .theme-logo{
     height: 39px;
@@ -62,4 +71,5 @@ export default {
     background-color: #c65353;
     color: #ffffff;
 }
+
 </style>

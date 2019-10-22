@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div class="login-form"  style="max-width: 400px;">
-            <form class="mb-4 p-4">
+        <div class="login-form"  style="max-width: 600px;">
+            <form class="mb-5 p-5 mt-5">
                 <h2 class="text-center">Sign in</h2>       
                 <div class="form-group">
                     <label for="loginemail">Email address</label>
-                    <input class="form-control" id="loginemail" placeholder="name@example.com" v-model="form.email">
+                    <input class="form-control" id="loginemail" placeholder="email" v-model="form.email">
                 </div>
                 <div class="form-group">
                     <label for="loginpass">Password</label>
@@ -18,7 +18,7 @@
             </form>
             <p class="text-center"><router-link class="black-link" to="/register">Create an Account</router-link></p> 
         </div>
-    
+       
     </div>
 </template>
 <style scoped>

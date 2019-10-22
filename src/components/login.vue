@@ -35,8 +35,11 @@
 </style>
 <script>
 import axios from 'axios'
+import VueCookies from 'vue-cookies'
+
 export default {
     name : 'login',
+    
     data(){
         return{
             form:{
@@ -47,19 +50,19 @@ export default {
     },
     methods: {
       onSubmit() {
-        
-         axios.post('https://api.yacs.maoyu.wang/sessions', {
-	"email" : this.form.email,
-	"password" : this.form.password
-  })
-  .then(function (response) {
-      console.log(response)
-  })
-  .catch(function (error) {
-  
-  });
+        axios.post('http://api.yacs.maoyu.wang/sessions', {
+            "email" : this.form.email,
+            "password" : this.form.password
+        })
+        .then(function (response) {
+            let session_id = response.data.content.sessionID
+            VueCookies.set('session-id',session_id);
+            console.log()
+        })
+        .catch(function (error) {
+            console.log(error)   
+        });
       }
     }
-
 }
 </script>

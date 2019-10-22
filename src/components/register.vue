@@ -46,7 +46,7 @@ export default {
     methods: {
       onSubmit() {
         
-         axios.post('https://api.yacs.maoyu.wang/users', {
+         axios.post('http://api.yacs.maoyu.wang/users', {
     "name" : this.form.name,
 	"email" : this.form.email,
 	"phone" : this.form.password,

@@ -16,26 +16,23 @@
                 </div>
                     <a href="#" class="pull-right white-link">Forgot Password?</a>
             </form>
-            <p class="text-center"><router-link class="black-link" to="/register">Create an Account</router-link></p> 
+            
+            <p class="text-center">Not registered?<br>
+                <button type="button" class="btn btn-outline-dark"><router-link to="/register">Create an Account</router-link></button>
+            </p> 
         </div>
        
     </div>
 </template>
 <style scoped>
+.btn a{  
+    text-decoration: none;
+    color: #324455;
 
+}
+.btn a:hover{  
+    color:white;
 
-.login-form form {
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-    background-color: #c65353;
-}
-.login-form h2 {
-    margin: 0 0 15px;
-}
-.form-control{
-    min-height: 38px;
-    border-radius: 2px;
-    
 }
 
 </style>

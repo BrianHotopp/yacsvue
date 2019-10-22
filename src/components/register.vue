@@ -1,41 +1,31 @@
 <template>
-    <div class="container">
-
-        <div class="form-group">
-          <div class="row justify-content-center justify-content-center">
-            <div class="col-sm-4">
+    <div class="w-100" style="max-width: 500px">
+      <form class="mb-5 p-5 mt-5">
+          <h2 class="text-center">Register</h2>       
+          <div class="form-group">
               <label for="registrationemail">Email address</label>
-              <input type="email" class="form-control" id="registrationemail" placeholder="name@example.com" v-model="form.email">
-            </div>
+              <input class="form-control" id="registrationemail" placeholder="email" v-model="form.email">
           </div>
-          <div class="row justify-content-center">
-            <div class="col-sm-4">
+          <div class="form-group">
               <label for="registrationname">Name</label>
               <input class="form-control" id="registrationname" placeholder="name" v-model="form.name">
-            </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-sm-4">
+          <div class="form-group">
               <label for="registrationpass">Password</label>
               <input type="password" class="form-control" id="registrationpass" placeholder="password" v-model="form.password">
-            </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-sm-4">
+          <div class="form-group">
               <label for="registrationmajor">Major</label>
               <input class="form-control" id="registrationmajor" placeholder="major" v-model="form.major">
-            </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-sm-4">
+          <div class="form-group">
               <label for="registrationdegree">Degree</label>
               <input class="form-control" id="registrationdegree" placeholder="degree" v-model="form.degree">
-              <b-button class = "mt-3" type="submit" variant="primary" v-on:click="onSubmit()">Submit</b-button>
-            </div>
           </div>
-    </div>
-    
-    
+          <div class="form-group">
+              <button type="button" class="btn btn-outline-light" v-on:click="onSubmit()">Register</button>
+          </div> 
+      </form>  
   </div>
 </template>
 <script>

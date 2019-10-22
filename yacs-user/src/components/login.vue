@@ -1,25 +1,24 @@
 <template>
     <div>
-        <div class="col mt-5">
-            <div class="login-form"  style="max-width: 400px;">
-                <form class="mb-4 p-4">
-                    <h2 class="text-center">Sign in</h2>       
-                    <div class="form-group">
-                        <label for="loginemail">Email address</label>
-                        <input class="form-control" id="loginemail" placeholder="name@example.com" v-model="form.email">
-                    </div>
-                    <div class="form-group">
-                        <label for="loginpass">Password</label>
-                        <input class="form-control" id="loginpass" placeholder="password" v-model="form.password">
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="btn btn-outline-light" v-on:click="onSubmit()">Sign-in</button>
-                    </div>
-                        <a href="#" class="pull-right white-link">Forgot Password?</a>
-                </form>
-                <p class="text-center"><router-link class="black-link" to="/register">Create an Account</router-link></p> 
-            </div>
+        <div class="login-form"  style="max-width: 400px;">
+            <form class="mb-4 p-4">
+                <h2 class="text-center">Sign in</h2>       
+                <div class="form-group">
+                    <label for="loginemail">Email address</label>
+                    <input class="form-control" id="loginemail" placeholder="name@example.com" v-model="form.email">
+                </div>
+                <div class="form-group">
+                    <label for="loginpass">Password</label>
+                    <input class="form-control" id="loginpass" placeholder="password" v-model="form.password">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-outline-light" v-on:click="onSubmit()">Sign-in</button>
+                </div>
+                    <a href="#" class="pull-right white-link">Forgot Password?</a>
+            </form>
+            <p class="text-center"><router-link class="black-link" to="/register">Create an Account</router-link></p> 
         </div>
+    
     </div>
 </template>
 <style scoped>

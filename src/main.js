@@ -28,11 +28,9 @@ const routes = [
   { path: '/register', component: register },
   { path: '/login', component: login }
 ]
-
 const router = new VueRouter({
   routes // short for `routes: routes`
 })
-
 new Vue({
   router,
   render: h => h(App),

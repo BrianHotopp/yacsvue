@@ -121,7 +121,7 @@ html, body, #app{
     color: #ffffff;
 }
 form {
-    box-shadow: 7px 7px 2px 1px #e3f2fd;
+    box-shadow: 3px 3px 1px 0px #e3f2fd;
     color: #ffffff;
     background-color: #c65353;
 }
@@ -132,5 +132,25 @@ form {
     min-height: 38px;
     border-radius: 2px;
 }
+.bounce-enter-active {
+  animation: bounce-in .2s;
+}
 
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.formwrapper{
+    max-width: 500px;
+}
+.formwrapper form{
+    border-radius: 4px;
+}
 </style>

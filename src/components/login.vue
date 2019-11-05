@@ -14,21 +14,48 @@
                 <button type="button" to="/register" class="btn btn-success float-right"><router-link tag="div" to="/register">Create an Account</router-link></button>
 
             </div>
-            <div class="alert alert-danger" role="alert">
-                 {{errmsg}}
-            </div>
+            
+            
+            
         </form>
         
+        <transition name = "bounce">
+            <div class="alert alert-danger" v-show="err" role="alert">
+                    {{err}}
+            </div>
+        </transition>
+            <transition name = "bounce">
+            <div class="alert alert-success" v-show="popup" role="alert">
+                    {{popup}}
+            </div>
+        </transition>
         
-            
     </div>
+    
 </template>
 <style scoped>
+.bounce-enter-active {
+  animation: bounce-in .2s;
+}
+.bounce-leave-active {
+  animation: bounce-in .05s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .formwrapper{
     max-width: 500px;
 }
 .formwrapper form{
-    border-radius: 25px;
+    border-radius: 4px;
 }
 
 </style>
@@ -38,11 +65,11 @@ import VueCookies from 'vue-cookies'
 
 export default {
     name : 'login',
-    
     data(){
-        
         return{
-            errmsg: '',
+            server_response: null,
+            err: '',
+            popup: '',
             form:{
                 email: '',
                 password: '',
@@ -55,17 +82,25 @@ export default {
             "email" : this.form.email,
             "password" : this.form.password
         })
-        .then(function (response) {
-            if (response.data.success) {
-                let session_id = response.data.content.sessionID
+        .then(
+            response => {
+                this.server_response = response;
+        if (this.server_response.data.success) {
+                let session_id = this.server_response.data.content.sessionID;
                 VueCookies.set('session-id',session_id);
-            }else{
-                this.errmsg = response.data.errMsg;
+                this.err = "";
+                this.popup = "Success!";
+        }else{
+            this.err = this.server_response.data.errMsg;
+        }
+            
+            
             }
-        })
+        )
         .catch(function (error) {
-            console.log(error)   
+            console.log(error)
         });
+        
       }
     }
 }

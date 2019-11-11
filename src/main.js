@@ -22,16 +22,18 @@ import App from './App.vue'
 
 import register from './components/register.vue'
 import login from './components/login.vue'
-
+import history from './components/history.vue'
 Vue.config.productionTip = false
 const routes = [
   { path: '/register', component: register },
-  { path: '/login', component: login }
+  { path: '/login', component: login },
+  { path: '/history', component: history }
 ]
 const router = new VueRouter({
   routes // short for `routes: routes`
 })
 new Vue({
+  VueCookies,
   router,
   render: h => h(App),
 }).$mount('#app')

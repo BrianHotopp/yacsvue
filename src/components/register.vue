@@ -62,7 +62,7 @@ export default {
     },
     methods: {
         login(){
-            axios.post('http://api.yacs.maoyu.wang/sessions', {
+            axios.post('https://api.yacs.maoyu.wang/sessions', {
                 "email" : this.form.email,
                 "password" : this.form.password
             })

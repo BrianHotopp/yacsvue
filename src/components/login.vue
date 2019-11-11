@@ -14,9 +14,7 @@
                 <button type="button" to="/register" class="btn btn-success float-right"><router-link tag="div" to="/register">Create an Account</router-link></button>
 
             </div>
-            
-            
-            
+
         </form>
         
         <transition name = "bounce">
@@ -39,7 +37,6 @@
 </style>
 <script>
 import axios from 'axios'
-import VueCookies from 'vue-cookies'
 
 export default {
     name : 'login',
@@ -55,7 +52,7 @@ export default {
     },
     methods: {
       onSubmit() {
-        axios.post('http://api.yacs.maoyu.wang/sessions', {
+        axios.post('https://api.yacs.maoyu.wang/sessions', {
             "email" : this.form.email,
             "password" : this.form.password
         })
@@ -64,9 +61,10 @@ export default {
               
         if (response.data.success) {
                 let session_id = response.data.content.sessionID;
-                VueCookies.set('session-id',session_id);
+                this.$VueCookies.set('session-id',session_id);
                 this.err = "";
                 this.popup = "Success!";
+                this.$router.push({ path: '/history'})
         }else{
             this.err = response.data.errMsg;
             this.popup = "";

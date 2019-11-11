@@ -14,31 +14,33 @@
     <!-- navbar -->
     
     <b-container fluid class="h-100">
-      <div v-if="loggedin">
+      <div v-if="this.$route.fullPath != '/login' && this.$route.fullPath != '/register'">
       <b-row class = "justify-content-center">
         <b-col cols="1">
           <div class="navpill" id="navpill-1">
-          <router-link><p>Browsing History</p></router-link>
+
+            
+          <p>Browsing History</p>
           </div>
         </b-col>
         <b-col cols="1">
           <div class="navpill" id="navpill-2">
-          <router-link>Browsing History</router-link>
+           <p>Account <br>Settings</p>
           </div>
         </b-col>
         <b-col cols="1">
           <div class="navpill" id="navpill-3">
-          <router-link>Account Setting</router-link>
+          <p>Course <br>Watchlist</p>
           </div>
         </b-col>
         <b-col cols="1">
           <div class="navpill" id="navpill-4">
-          <router-link>Notification</router-link>
+          <p>Notification<br> Center</p>
           </div>
         </b-col>
         <b-col cols="1">
           <div class="navpill" id="navpill-5">
-          <router-link>Watch List</router-link>
+          <p>Log Out</p>
           </div>
         </b-col>
       </b-row>
@@ -55,10 +57,12 @@
 
 <script>
 export default {
+  
   name: 'app',
   data(){
+    
     return{
-      loggedin: false
+      
     }
   }
   
@@ -77,7 +81,8 @@ export default {
 .navpill{
 height:50px;
 border-radius: 25px;
-margin-top: 20px
+margin-top: 20px;
+color: white;
 }
 #navpill-1{
   background: #6a89cc;

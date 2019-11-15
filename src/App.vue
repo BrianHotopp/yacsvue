@@ -1,37 +1,70 @@
 <style>
 
 </style>
-<template>
+<template>  
+
   <div id="app">
+    <!-- header -->
     <b-navbar class="p-0 navbar-custom">
     <div class="container">
     <a class="navbar-brand col-auto" href="https://yacs.cs.rpi.edu/"><img class="theme-logo" src="./assets/yacs-symbol-lockup-white.png"></a>
     </div>
     </b-navbar>
-    <!-- rewrite sidebar -->
+    <!-- end header -->
+    <!-- navbar -->
+    
     <b-container fluid class="h-100">
-      <b-row class="h-100">
-        <b-col lg="1" id="sidebar">
-            <b-nav vertical>
-            <b-nav-item class="navitem"><router-link class="white-link" to="/login">Login</router-link></b-nav-item>
-            <b-nav-item class="navitem"><router-link class="white-link" to="#">Browsing History</router-link></b-nav-item>
-            <b-nav-item class="navitem"><router-link class="white-link" to="#">Notifications</router-link></b-nav-item>
-            <b-nav-item class="navitem"><router-link class="white-link" to="#">Watch List</router-link></b-nav-item>
-            </b-nav>
+      <div v-if="this.$route.fullPath != '/login' && this.$route.fullPath != '/register'">
+      <b-row class = "justify-content-center">
+        <b-col cols="1">
+          <div class="navpill" id="navpill-1">
+
+            
+          <p>Browsing History</p>
+          </div>
         </b-col>
-        <b-col lg="10" class="d-flex justify-content-center">
-          <router-view></router-view>
+        <b-col cols="1">
+          <div class="navpill" id="navpill-2">
+           <p>Account <br>Settings</p>
+          </div>
+        </b-col>
+        <b-col cols="1">
+          <div class="navpill" id="navpill-3">
+          <p>Course <br>Watchlist</p>
+          </div>
+        </b-col>
+        <b-col cols="1">
+          <div class="navpill" id="navpill-4">
+          <p>Notification<br> Center</p>
+          </div>
+        </b-col>
+        <b-col cols="1">
+          <div class="navpill" id="navpill-5">
+          <p>Log Out</p>
+          </div>
         </b-col>
       </b-row>
+      </div>
+      <b-row class="justify-content-center">
+        <router-view>
+        </router-view>
+      </b-row>
     </b-container>
-    <!-- Sidebar -->
+    
     
   </div>
 </template>
 
 <script>
 export default {
+  
   name: 'app',
+  data(){
+    
+    return{
+      
+    }
+  }
   
 }
 </script>
@@ -44,6 +77,27 @@ export default {
   text-align: center;
   color: #2c3e50;
   
+}
+.navpill{
+height:50px;
+border-radius: 25px;
+margin-top: 20px;
+color: white;
+}
+#navpill-1{
+  background: #6a89cc;
+}
+#navpill-2{
+  background: #4a69bd;
+}
+#navpill-3{
+  background: #1e3799;
+}
+#navpill-4{
+  background: #0a3d62;
+}
+#navpill-5{
+  background: #0c2461;
 }
 html, body, #app{
   height: 100%;
@@ -72,7 +126,7 @@ html, body, #app{
     color: #ffffff;
 }
 form {
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 1px 0px #e3f2fd;
     color: #ffffff;
     background-color: #c65353;
 }
@@ -83,5 +137,25 @@ form {
     min-height: 38px;
     border-radius: 2px;
 }
+.bounce-enter-active {
+  animation: bounce-in .2s;
+}
 
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.formwrapper{
+    max-width: 500px;
+}
+.formwrapper form{
+    border-radius: 4px;
+}
 </style>
